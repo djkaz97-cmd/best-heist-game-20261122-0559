@@ -59,9 +59,11 @@ function makeDot(ctx, color, size, radius, alpha) {
 let PATTERNS = null;
 function patterns(ctx) {
   if (PATTERNS) return PATTERNS;
+  // Dots stay light on purpose: at thumbnail size a denser screen muddies the
+  // fan into a solid block, so the crisp edge carries the read instead.
   PATTERNS = {
-    amber: makeDot(ctx, C.amber, 6, 2.45, 1),
-    alarm: makeDot(ctx, C.alarm, 6, 2.45, 1),
+    amber: makeDot(ctx, C.amber, 7, 2.3, 1),
+    alarm: makeDot(ctx, C.alarm, 7, 2.3, 1),
     teal: makeDot(ctx, C.teal, 7, 2.3, 1),
     cream: makeDot(ctx, C.cream, 8, 1.2, 0.75),
     smoke: makeDot(ctx, C.smoke, 6, 1.7, 0.7),
@@ -389,7 +391,7 @@ function fan(ctx, pts, color, pattern, dashed) {
   ctx.moveTo(pts[0].x, pts[0].y);
   for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
   ctx.closePath();
-  ctx.strokeStyle = color;
+  ctx.strokeStyle = rgba(color, 0.92);
   ctx.lineWidth = dashed ? 2.5 : 3;
   ctx.setLineDash(dashed ? [7, 5] : []);
   ctx.stroke();
