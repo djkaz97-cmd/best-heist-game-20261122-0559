@@ -1,0 +1,40 @@
+/* The page is only a frame for the canvas: black table, one sheet, nothing else. */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #05070d;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#frame {
+  width: min(100vw, 177.7778vh);
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 0 0 1px #1a2038, 0 18px 60px rgba(0, 0, 0, 0.65);
+}
+
+#stage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #0a0e1a;
+  cursor: crosshair;
+}
+
+#err {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 9;
+  max-width: 64ch;
+  padding: 10px 14px;
+  background: #e0453a;
+  color: #f4e8d0;
+  font: 12px/1.45 ui-monospace, Consolas, monospace;
+}

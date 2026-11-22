@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>VELVET HOUR — a screen-print museum heist</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="frame">
+    <canvas id="stage" width="1280" height="720" aria-label="Velvet Hour: a top-down museum floor seen from above, the thief crossing the atrium"></canvas>
+  </div>
+  <div id="err" hidden></div>
+  <script>
+    window.addEventListener('error', function (event) {
+      var box = document.getElementById('err');
+      if (!box) return;
+      box.hidden = false;
+      box.textContent = 'VELVET HOUR — ' + (event.message || 'unknown error') + '. Reload the page to try again.';
+    });
+  </script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

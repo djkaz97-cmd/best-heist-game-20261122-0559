@@ -1,0 +1,6 @@
+[
+  { "name": "1-cover.png", "query": "?shot=cover&seed=7" },
+  { "name": "2-smoke.png", "query": "?shot=smoke&seed=7" },
+  { "name": "3-loot.png", "query": "?shot=loot&seed=7" },
+  { "name": "4-win.png", "query": "?shot=win&seed=7" }
+]
